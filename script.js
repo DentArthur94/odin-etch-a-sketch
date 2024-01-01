@@ -1,24 +1,33 @@
 "use strict"; 
 
 const container = document.querySelector("#container"); 
+const newGridButton = document.querySelector("button");
+let squarePerSide = 0;
 
-createGrid(50,50);
+newGridButton.addEventListener("click", () => {
+    squarePerSide = prompt("How many square per side do you want ?"); 
+    
+    createGrid(squarePerSide,squarePerSide);
 
-const gridBlock = document.querySelectorAll(".column"); 
-
-gridBlock.forEach( (block) => {
-
-    block.addEventListener("mouseenter", function eventHandler() {
-
-        block.style.cssText = 'background-color : blue;';
-
-        setTimeout(function () {
-            block.style.cssText = '';
-        }, 500);
-
-        
+    const gridBlock = document.querySelectorAll(".column"); 
+    
+    gridBlock.forEach( (block) => {
+    
+        block.addEventListener("mouseenter", function eventHandler() {
+    
+            block.style.cssText = 'background-color : blue;';
+    
+            // setTimeout(function () {
+            //     block.style.cssText = '';
+            // }, 500);
+    
+            
+        });
     });
-});
+}
+);
+
+
 
 
 
