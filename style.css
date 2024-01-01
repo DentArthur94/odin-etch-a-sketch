@@ -1,0 +1,25 @@
+body {
+    margin : 0; 
+    border : 0;
+    box-sizing: border-box;
+}
+
+#container {
+    display : flex;
+    flex-direction: column;
+    border : black 2px solid;
+    height : 100vh;
+}
+
+.line {
+    border : red 2px solid;
+    flex : 1;
+    display: flex;
+
+}
+
+.column {
+    border : green 2px solid;
+    flex : 1;
+
+}
