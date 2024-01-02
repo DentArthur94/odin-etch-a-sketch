@@ -5,8 +5,13 @@ const newGridButton = document.querySelector("button");
 let squarePerSide = 0;
 
 newGridButton.addEventListener("click", () => {
-    squarePerSide = prompt("How many square per side do you want ?"); 
+
+    do {
+        squarePerSide = prompt("How many square per side do you want ?"); 
+    } while (squarePerSide > 100);
     
+
+    deleteGrid();
     createGrid(squarePerSide,squarePerSide);
 
     const gridBlock = document.querySelectorAll(".column"); 
@@ -73,3 +78,12 @@ function createGrid(nbOfLines, nbOfColumns) {
 }
 
 
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
+
+function deleteGrid() {
+    removeAllChildNodes(container); 
+}
